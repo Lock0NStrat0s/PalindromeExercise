@@ -8,8 +8,10 @@ namespace PalindromeExercise;
 
 public class WordSmith
 {
-    public string Palindrome(string str)
+    public bool Palindrome(string str)
     {
-        return new string(str.Reverse().ToArray());
+        var newS = new string(str.Where(x => char.IsLetter(x)).ToArray()).ToLower();
+
+        return newS == new string(newS.Reverse().ToArray());
     }
 }
